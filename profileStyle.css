@@ -1,0 +1,365 @@
+/* ===================================
+   SAMEER ISHFAQ PORTFOLIO
+   Modern Responsive Design
+=================================== */
+
+/* ---------- CSS VARIABLES ---------- */
+
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+
+    --text: #0f172a;
+    --text-muted: #64748b;
+
+    --primary: #2563eb;
+    --secondary: #7c3aed;
+
+    --border: #e2e8f0;
+
+    --shadow:
+        0 4px 6px rgba(0, 0, 0, 0.08),
+        0 10px 15px rgba(0, 0, 0, 0.05);
+
+    --radius: 16px;
+    --transition: 0.3s ease;
+}
+
+/* ---------- DARK MODE ---------- */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --surface: #1e293b;
+        --surface-hover: #334155;
+
+        --text: #f8fafc;
+        --text-muted: #94a3b8;
+
+        --primary: #60a5fa;
+        --secondary: #a78bfa;
+
+        --border: #334155;
+    }
+}
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behaviour: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        system-ui,
+        sans-serif;
+
+    line-height: 1.7;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+/* ---------- BACKGROUND EFFECT ---------- */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(124, 58, 237, 0.15),
+            transparent 35%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+body > a:first-child {
+    margin-left: 0;
+}
+
+body > a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    padding: 0.75rem 1.25rem;
+    margin-right: 0.75rem;
+    margin-bottom: 2rem;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+    transition: transform var(--transition);
+}
+
+body > a:hover {
+    transform: translateY(-2px);
+}
+
+/* ---------- HERO SECTION ---------- */
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+img {
+    width: 25%;
+max-width: 600px;
+height: auto;
+border-radius: 20px;
+border: 5px solid var(--surface);
+box-shadow: var(--shadow);
+display: block;
+margin: 1rem 0;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+
+    color: var(--primary);
+
+    border-left: 5px solid var(--primary);
+    padding-left: 1rem;
+}
+
+h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.4rem;
+
+    color: var(--secondary);
+}
+
+h4,
+h5 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    color: var(--primary);
+}
+
+/* ---------- ABOUT ---------- */
+
+p {
+    max-width: 75ch;
+
+    color: var(--text-muted);
+
+    font-size: 1.05rem;
+}
+
+/* ---------- PROJECT CARDS ---------- */
+
+h3 {
+    background: var(--surface);
+
+    padding: 1.25rem 1.5rem;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+/* project details immediately after heading */
+
+h3 + div,
+h3 + ul {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-top: none;
+
+    padding: 1.5rem;
+
+    border-radius:
+        0
+        0
+        var(--radius)
+        var(--radius);
+
+    margin-bottom: 2rem;
+
+    box-shadow: var(--shadow);
+}
+
+/* ---------- STACK TAGS ---------- */
+
+.stack {
+    margin-top: -1.5rem;
+}
+
+.stack span {
+    display: inline-block;
+
+    background: rgba(37, 99, 235, 0.1);
+
+    color: var(--primary);
+
+    padding: 0.5rem 0.9rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- LISTS ---------- */
+
+ul {
+    padding-left: 1.4rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+}
+
+li::marker {
+    color: var(--primary);
+}
+
+/* ---------- HOBBIES SECTION ---------- */
+
+h4 + ul,
+h5 + ul {
+    background: var(--surface);
+
+    padding: 1.5rem;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+/* ---------- CARD HOVER ---------- */
+
+h3,
+h3 + div,
+h3 + ul,
+h4 + ul,
+h5 + ul {
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+h3:hover,
+h3 + div:hover,
+h3 + ul:hover,
+h4 + ul:hover,
+h5 + ul:hover {
+    transform: translateY(-4px);
+    background: var(--surface-hover);
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    img {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    body > a {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 999px;
+}
